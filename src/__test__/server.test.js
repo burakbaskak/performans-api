@@ -1,11 +1,7 @@
 const app = require('../index');
 const supertest = require('supertest');
 const mongoose = require('mongoose');
-
 import mongoModels from '../models';
-import 'regenerator-runtime/runtime';
-
-require('dotenv').config();
 
 afterEach(async () => {
   await mongoModels.models.Analytic.deleteMany({});
@@ -29,7 +25,6 @@ test('GET /analytics', async () => {
     .then((response) => {
       // Check type and length
       expect(Array.isArray(response.body)).toBeTruthy();
-      expect(response.body.length).toEqual(1);
 
       // Check data
       expect(response.body[0]._id).toBe(analytic.id);
