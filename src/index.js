@@ -1,4 +1,3 @@
-const serverless = require('serverless-http');
 import 'dotenv/config';
 import cors from 'cors';
 import express from 'express';
@@ -51,4 +50,3 @@ connectDb().then(() => {
 });
 
 module.exports = app;
-module.exports.handler = serverless(app);
