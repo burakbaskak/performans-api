@@ -19,6 +19,10 @@
     "regenerator-runtime": "^0.13.9",
     "supertest": "^6.1.6"
   },
+  "engines": {
+    "node": "15.x",
+    "npm": "7.5.1"
+  },
   "dependencies": {
     "@mongoosejs/double": "^0.2.0",
     "cors": "^2.8.5",
