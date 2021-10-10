@@ -1,3 +1,4 @@
+const serverless = require('serverless-http');
 import 'dotenv/config';
 import cors from 'cors';
 import express from 'express';
@@ -34,6 +35,7 @@ app.use(async (req, res, next) => {
 
 app.use('/analytics', routes.analytic);
 app.use('/resource-analytics', routes.resourceAnalytic);
+app.use('/.netlify/functions/server', router); // path must route to lambda
 
 app.get('/', (req, res) => {
   res.send(
@@ -49,3 +51,4 @@ connectDb().then(() => {
 });
 
 module.exports = app;
+module.exports.handler = serverless(app);
