@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "yarn run test && node src/index.js",
-    "test": "jest --setupFiles dotenv/config"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -33,7 +33,9 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "globalSetup": "<rootDir>/dotenv-test.js",
+    "setupFilesAfterEnv": [
+      "./jest-preload-env.js"
+    ],
     "coveragePathIgnorePatterns": [
       "/node_modules/"
     ]
