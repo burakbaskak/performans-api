@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
-import Analytic from './analytic';
-import ResourceAnalytic from './resourceAnalytic';
+const Analytic = require('./analytic');
+const ResourceAnalytic = require('./resourceAnalytic');
 
 const connectDb = () => {
   return mongoose.connect(process.env.DATABASE_URL, {
@@ -12,6 +12,5 @@ const connectDb = () => {
 
 const models = { Analytic, ResourceAnalytic };
 
-export { connectDb };
-
-export default models;
+exports.connectDb = connectDb;
+exports.models = models;

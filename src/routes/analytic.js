@@ -1,6 +1,6 @@
-import { Router } from 'express';
+const express = require('express');
 
-const router = Router();
+const router = express.Router();
 
 router.get('/', async (req, res) => {
   // const start = req.query.start;
@@ -42,4 +42,4 @@ router.post('/', async (req, res) => {
   return res.send(message);
 });
 
-export default router;
+module.exports = router;

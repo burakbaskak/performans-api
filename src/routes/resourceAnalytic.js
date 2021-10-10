@@ -1,6 +1,6 @@
-import { Router } from 'express';
+const express = require('express');
 
-const router = Router();
+const router = express.Router();
 
 router.post('/', async (req, res) => {
   const message = await req.context.models.ResourceAnalytic.create({
@@ -13,4 +13,4 @@ router.post('/', async (req, res) => {
   return res.send(message);
 });
 
-export default router;
+module.exports = router;

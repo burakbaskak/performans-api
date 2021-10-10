@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import Double from '@mongoosejs/double';
+const mongoose = require('mongoose');
+const Double = require('@mongoosejs/double');
 
 const resourceAnalyticSchema = new mongoose.Schema({
   name: {
@@ -22,4 +22,4 @@ const ResourceAnalytic = mongoose.model(
   resourceAnalyticSchema,
 );
 
-export default ResourceAnalytic;
+module.exports = ResourceAnalytic;

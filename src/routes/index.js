@@ -1,7 +1,7 @@
-import analytic from './analytic';
-import resourceAnalytic from './resourceAnalytic';
+const analytic = require('./analytic');
+const resourceAnalytic = require('./resourceAnalytic');
 
-export default {
+module.exports = {
   analytic,
   resourceAnalytic,
 };

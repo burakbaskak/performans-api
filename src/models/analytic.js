@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import Double from '@mongoosejs/double';
+const mongoose = require('mongoose');
+const Double = require('@mongoosejs/double');
 
 const analyticSchema = new mongoose.Schema({
   name: {
@@ -18,4 +18,4 @@ const analyticSchema = new mongoose.Schema({
 
 const Analytic = mongoose.model('Analytic', analyticSchema);
 
-export default Analytic;
+module.exports = Analytic;

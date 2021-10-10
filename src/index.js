@@ -1,10 +1,10 @@
-import 'dotenv/config';
-import cors from 'cors';
-import express from 'express';
-import multer from 'multer';
+require('dotenv/config');
+const cors = require('cors');
+const express = require('express');
+const multer = require('multer');
 
-import models, { connectDb } from './models';
-import routes from './routes';
+const models = require('./models');
+const routes = require('./routes');
 
 var upload = multer();
 const app = express();
@@ -25,7 +25,7 @@ app.use(upload.array());
 
 app.use(async (req, res, next) => {
   req.context = {
-    models,
+    models: models.models,
   };
   next();
 });
@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
 });
 
 // * Start * //
-connectDb().then(() => {
+models.connectDb().then(() => {
   app.listen(process.env.PORT, () =>
     console.log(`Example app listening on port ${process.env.PORT}!`),
   );
