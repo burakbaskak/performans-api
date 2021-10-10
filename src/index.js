@@ -34,7 +34,6 @@ app.use(async (req, res, next) => {
 
 app.use('/analytics', routes.analytic);
 app.use('/resource-analytics', routes.resourceAnalytic);
-app.use('/.netlify/functions/server', router); // path must route to lambda
 
 app.get('/', (req, res) => {
   res.send(
