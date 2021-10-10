@@ -1,17 +1,22 @@
 const app = require('../index');
 const supertest = require('supertest');
+const mongoose = require('mongoose');
 
-import models from '../models';
+import mongoModels from '../models';
 import 'regenerator-runtime/runtime';
 
 require('dotenv').config();
 
 afterEach(async () => {
-  await models.Analytic.deleteMany({});
+  await mongoModels.models.Analytic.deleteMany({});
+});
+
+afterAll(async () => {
+  await mongoose.connection.close(true);
 });
 
 test('GET /analytics', async () => {
-  const analytic = await models.Analytic.create({
+  const analytic = await mongoModels.models.Analytic.create({
     name: 'test',
     duration: 3.1,
     createText: '23.09',

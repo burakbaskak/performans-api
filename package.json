@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "test": "jest --setupFiles dotenv/config ---watchAll"
+    "start": "yarn run test && node src/index.js",
+    "test": "jest --setupFiles dotenv/config"
   },
   "keywords": [],
   "author": "",
